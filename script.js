@@ -1,12 +1,32 @@
 window.onload = function () {
-    let button = document.getElementById('add-element');
-    let boxContainer = document.getElementById('box-container');
+    // pobieranie elementu
+    const button = document.getElementById('add-element');
+    const boxContainer = document.getElementById('box-container');
 
+    // wywoływanie wyzwalacza na 'click' na elemencie button
     button.addEventListener('click', function () {
-        let nowyElement = document.createElement('div');
-        let nowyElement2 = document.createElement('div');
-        nowyElement.classList.add('subItem2');
-        nowyElement2.classList.add('subSubItem1');
-        boxContainer.appendChild(nowyElement);
+        // stworzenie nowego elementu
+        const singleProduct = document.createElement('div');
+        singleProduct.classList.add('singleProduct');
+
+        const productHeader = document.createElement('div');
+        productHeader.classList.add('productHeader');
+
+        const priceProduct = document.createElement('div');
+        priceProduct.classList.add('priceProduct');
+
+        const productName = document.createElement('div');
+        productName.classList.add('productName');
+
+        const buttonDelete = document.createElement('div');
+        buttonDelete.classList.add('buttonDelete');
+
+        singleProduct.appendChild(productHeader);
+        singleProduct.appendChild(priceProduct);
+
+        productHeader.appendChild(productName);
+        productHeader.appendChild(buttonDelete);
+
+        boxContainer.appendChild(singleProduct);
     });
 };
